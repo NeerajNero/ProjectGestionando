@@ -9,7 +9,7 @@ const initialState = {
 
 export const getTeams = createAsyncThunk('getTeams', async() => {
     const token = localStorage.getItem('authToken')
-    const response = await axios.get('http://localhost:5000/api/teams/getTeams',{
+    const response = await axios.get('project-gestionando-backend.vercel.app/api/teams/getTeams',{
         headers: {
             Authorization: `Bearer ${token}`
         }
@@ -18,7 +18,7 @@ export const getTeams = createAsyncThunk('getTeams', async() => {
 })
 export const addTeam = createAsyncThunk('addTeam', async({name,description}) => {
     const token = localStorage.getItem('authToken')
-    const response = await axios.post('http://localhost:5000/api/teams/addTeam', {name,description}, {
+    const response = await axios.post('project-gestionando-backend.vercel.app/api/teams/addTeam', {name,description}, {
         headers: {
             Authorization: `Bearer ${token}`
         }

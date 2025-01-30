@@ -8,12 +8,12 @@ const initialState = {
     status: 'idle'
 }
 export const userLogin = createAsyncThunk('login', async({email,password}) => {
-    const response = await axios.post('http://localhost:5000/api/auth/login',{email,password})
+    const response = await axios.post('project-gestionando-backend.vercel.app/api/auth/login',{email,password})
     return response.data
 })
 
 export const userSignup = createAsyncThunk('signup', async({fullName, email, password}) => {
-    const response = await axios.post('http://localhost:5000/api/auth/signin', {fullName, email, password})
+    const response = await axios.post('project-gestionando-backend.vercel.app/api/auth/signin', {fullName, email, password})
     return response.data
 })
 
