@@ -8,18 +8,18 @@ const initialState = {
     status: 'idle'
 }
 export const userLogin = createAsyncThunk('login', async({email,password}) => {
-    const response = await axios.post('https://project-gestionando-backend.vercel.app//api/auth/login',{email,password})
+    const response = await axios.post('https://project-gestionando-backend.vercel.app/api/auth/login',{email,password})
     return response.data
 })
 
 export const userSignup = createAsyncThunk('signup', async({fullName, email, password}) => {
-    const response = await axios.post('https://project-gestionando-backend.vercel.app//api/auth/signin', {fullName, email, password})
+    const response = await axios.post('https://project-gestionando-backend.vercel.app/api/auth/signin', {fullName, email, password})
     return response.data
 })
 
 export const logout = createAsyncThunk('logout', async() => {
     const token = localStorage.getItem('authToken')
-    const response = await axios.post('https://project-gestionando-backend.vercel.app//api/auth/logout',{},{headers: {
+    const response = await axios.post('https://project-gestionando-backend.vercel.app/api/auth/logout',{},{headers: {
         Authorization: `Bearer ${token}`
     }})
     return response.data
@@ -27,7 +27,7 @@ export const logout = createAsyncThunk('logout', async() => {
 
 export const getUsers = createAsyncThunk('getUsers', async() => {
     const token = localStorage.getItem('authToken')
-    const response = await axios.get('https://project-gestionando-backend.vercel.app//api/auth/getUser',{headers: {
+    const response = await axios.get('https://project-gestionando-backend.vercel.app/api/auth/getUser',{headers: {
         Authorization: `Bearer ${token}`
     }})
     return response.data 
