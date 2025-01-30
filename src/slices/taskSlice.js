@@ -29,6 +29,7 @@ export const addTask = createAsyncThunk('addTask', async(taskData) => {
 export const updateTask = createAsyncThunk('updateTask', async({taskId}) => {
     const token = localStorage.getItem('authToken')
     const response = await axios.put('https://project-gestionando-backend.vercel.app/api/tasks/updateTask', {taskId}, {
+        withCredentials: true,
         headers: {
             Authorization: `Bearer ${token}`
         }
