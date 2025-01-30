@@ -9,7 +9,7 @@ const initialState = {
 
 export const getTags = createAsyncThunk('getTags', async() => {
     const token = localStorage.getItem('authToken')
-    const response = await axios.get('project-gestionando-backend.vercel.app/api/tags/getTags', {
+    const response = await axios.get('https://project-gestionando-backend.vercel.app//api/tags/getTags', {
         headers: {
             Authorization: `Bearer ${token}`
         }
