@@ -8,7 +8,7 @@ const initialState = {
 
 export const getProjects = createAsyncThunk('getProjects', async() => {
     const token = localStorage.getItem('authToken')
-    const response = await axios.get('https://project-gestionando-backend.vercel.app/api/projects/project',{
+    const response = await axios.get('https://projectgestionando-backend.onrender.com/api/projects/project',{
         withCredentials: true,
         headers: {
             Authorization: `Bearer ${token}`
@@ -19,7 +19,7 @@ export const getProjects = createAsyncThunk('getProjects', async() => {
 
 export const addProject = createAsyncThunk('addProject', async({name,description}) => {
     const token = localStorage.getItem('authToken')
-    const response = await axios.post('https://project-gestionando-backend.vercel.app/api/projects/addProject', {name,description}, {
+    const response = await axios.post('https://projectgestionando-backend.onrender.com/api/projects/addProject', {name,description}, {
         withCredentials: true,
         headers: {
             Authorization: `Bearer ${token}`

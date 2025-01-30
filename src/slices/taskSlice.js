@@ -9,7 +9,7 @@ const initialState = {
 
 export const getTasks = createAsyncThunk('getTasks', async() => {
     const token = localStorage.getItem('authToken')
-    const response = await axios.get('https://project-gestionando-backend.vercel.app/api/tasks/getTasks', {
+    const response = await axios.get('https://projectgestionando-backend.onrender.com/api/tasks/getTasks', {
         headers: {
             Authorization: `Bearer ${token}`
         }
@@ -18,7 +18,7 @@ export const getTasks = createAsyncThunk('getTasks', async() => {
 })
 export const addTask = createAsyncThunk('addTask', async(taskData) => {
     const token = localStorage.getItem('authToken')
-    const response = await axios.post('https://project-gestionando-backend.vercel.app/api/tasks/addTask', {taskData}, {
+    const response = await axios.post('https://projectgestionando-backend.onrender.com/api/tasks/addTask', {taskData}, {
         headers: {
             Authorization: `Bearer ${token}`
         }
@@ -28,7 +28,7 @@ export const addTask = createAsyncThunk('addTask', async(taskData) => {
 
 export const updateTask = createAsyncThunk('updateTask', async({taskId}) => {
     const token = localStorage.getItem('authToken')
-    const response = await axios.put('https://project-gestionando-backend.vercel.app/api/tasks/updateTask', {taskId}, {
+    const response = await axios.put('https://projectgestionando-backend.onrender.com/api/tasks/updateTask', {taskId}, {
         withCredentials: true,
         headers: {
             Authorization: `Bearer ${token}`
